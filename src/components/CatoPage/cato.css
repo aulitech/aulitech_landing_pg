@@ -1,0 +1,9 @@
+.catoHeader {
+  transform: translateX(-100%);
+  transition: 150ms;
+  transition: transform 0.5s linear;
+}
+
+.show {
+  transform: translateX(0);
+}
