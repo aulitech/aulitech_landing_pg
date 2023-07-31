@@ -1,0 +1,27 @@
+.container {
+  background-color: transparent;
+}
+
+.contentContainer {
+  position: relative;
+  isolation: isolate;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 14px;
+
+}
+
+.header {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+}

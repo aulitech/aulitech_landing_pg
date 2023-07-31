@@ -4,40 +4,46 @@ import { useInView } from "react-intersection-observer";
 const features = [
   {
     name: "Function",
-    description:
-      "Small wireless device for use as a mouse, keyboard, and joystick.",
+    description: "Small wireless device for use as a mouse, keyboard, and joystick.",
   },
   {
     name: "Machine Learning",
-    description:
-      "Learns user specific gestures translating them to bluteooth signals.",
+    description: "Learns user specific gestures translating them to bluteooth signals.",
   },
-  {
-    name: "Bluetooth",
-    description:
-      "Connects to directly to phones, tablets, computers and TVs supporting bluetooth.",
-  },
+  { name: "Bluetooth", description: "Connects to directly to phones, tablets, computers and TVs supporting bluetooth." },
 ];
 
-export default function CatoTest({ classNames, scrollDir }) {
+
+export default function CatoTest({classNames, scrollDir}) {
   const options = {
-    threshold: 0.75,
+    threshold: .75,
     // triggerOnce: scrollDir === 'up' ? true : false
   };
   const { ref: titleRef, inView: titleVisible } = useInView(options);
   const { ref: myRef, inView: myElementVisible } = useInView(options);
 
   return (
-    <div>
+    <div className="relative isolate px-6 pt-14 lg:px-0">
       <div className="bg-gray-900 py-10 sm:py-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-white text-4xl font-bold tracking-tight sm:text-6xl">
-            Cato
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-white">
-            When you can't click a mouse, tap a screen, or change the channel
-            you've lost control of your environment.
-          </p>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* <div ref={titleRef} className={classNames(titleVisible ? "transition ease-in-out duration-500 translate-x-0 opacity-100 " : "transition ease-in-out duration-350 -translate-x-20 opacity-0 ", "mx-auto max-w-2xl lg:mx-0")}> */}
+          <div
+            ref={titleRef}
+            className={classNames(
+              titleVisible
+                ? "transition ease-in-out duration-300 translate-x-0 opacity-100 "
+                : "transition ease-in-out duration-300 -translate-x-20 opacity-0 ",
+              "mx-auto max-w-2xl lg:mx-0"
+            )}
+          >
+            <h2 className="text-white text-4xl font-bold tracking-tight sm:text-6xl">
+              Cato
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-white">
+              When you can't click a mouse, tap a screen, or change the channel
+              you've lost control of your environment.
+            </p>
+          </div>
         </div>
       </div>
       <div></div>
@@ -48,7 +54,7 @@ export default function CatoTest({ classNames, scrollDir }) {
               ref={myRef}
               className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
             >
-              What's Cato?
+              What's Cato ?
             </h2>
             <p className="mt-4 text-gray-500">
               Cato is a compact wireless device intended to give individuals
@@ -58,7 +64,7 @@ export default function CatoTest({ classNames, scrollDir }) {
             <div className="gap-x-6 py-10 sm:before:flex-1">
               <p className="text-base font-semibold leading-6 text-blue-500">
                 <a href="#">
-                  Check out the MyCato dashboard&nbsp;
+                  Check out MyCato dashboard&nbsp;
                   <span aria-hidden="true">&rarr;</span>
                 </a>
               </p>
@@ -100,6 +106,19 @@ export default function CatoTest({ classNames, scrollDir }) {
               className="rounded-lg bg-gray-100"
             />
           </div>
+
+          {/* <div
+            className="absolute inset-x-0 -top-1 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
+            aria-hidden="true"
+          >
+            <div
+              className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+            />
+          </div> */}
           <div
             className="absolute inset-x-0 top-15 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
             aria-hidden="true"

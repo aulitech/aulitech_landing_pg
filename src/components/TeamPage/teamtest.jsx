@@ -33,26 +33,37 @@ const people = [
 
 export default function TeamTest() {
   return (
-    <div className="bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
-        <div className="max-w-2xl xl:col-span-2">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About the team</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            We’re a dynamic group of individuals who are passionate about giving a voice back to those with nueromuscular and vocal impairments, in the virtual world and real world.
-          </p>
-        </div>
-        <ul role="list" className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
-          {people.map((person) => (
-            <li key={person.name} className="flex flex-col gap-10 pt-12 sm:flex-row">
-              <div className="max-w-xl flex-auto">
-                <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
-                <p className="text-base leading-7 text-gray-600">{person.role}</p>
-                <p className="mt-6 text-sm leading-7 text-gray-600">{person.bio}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+    <>
+        <div className="bg-gray-900 px-6 py-10 lg:px-8">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">About</h2>
+        <p className="mt-6 text-lg leading-8 text-gray-300">
+          Learn more about the company, our products, and the team that make it all possible
+        </p>
       </div>
     </div>
+    
+    <div className="bg-white py-24 md:py-32">
+    <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
+      <div className="max-w-2xl xl:col-span-2">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About the team</h2>
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          We’re a dynamic group of individuals who are passionate about giving a voice back to those with nueromuscular and vocal impairments, in the virtual world and real world.
+        </p>
+      </div>
+      <ul role="list" className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
+        {people.map((person) => (
+          <li key={person.name} className="flex flex-col gap-10 pt-12 sm:flex-row">
+            <div className="max-w-xl flex-auto">
+              <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
+              <p className="text-base leading-7 text-gray-600">{person.role}</p>
+              <p className="mt-6 text-sm leading-7 text-gray-600">{person.bio}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+    </>
   )
 }

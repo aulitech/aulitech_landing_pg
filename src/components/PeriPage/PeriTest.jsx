@@ -1,4 +1,6 @@
-
+import { useInView } from "react-intersection-observer";
+import { StartLeft } from "../GradientShapes/StartLeft";
+import { StartRight } from "../GradientShapes/StartRight";
 const features = [
   {
     name: 'Minimal and thoughtful',
@@ -17,11 +19,27 @@ const features = [
 ]
 
 export default function PeriTest({classNames}) {
+
+  const options = {
+    threshold: .75,
+    // triggerOnce: scrollDir === 'up' ? true : false
+  };
+  const { ref: titleRef, inView: titleVisible } = useInView(options); 
+
   return (
     <div>
       <div className="bg-gray-900 py-10 sm:py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
+          {/* <div className="mx-auto max-w-2xl lg:mx-0"> */}
+          <div
+            ref={titleRef}
+            className={classNames(
+              titleVisible
+                ? "transition ease-in-out duration-300 translate-x-0 opacity-100 "
+                : "transition ease-in-out duration-300 -translate-x-20 opacity-0 ",
+              "mx-auto max-w-2xl lg:mx-0"
+            )}
+          >
             <h2 className="text-white text-4xl font-bold tracking-tight sm:text-6xl">
               Peri
             </h2>
@@ -37,13 +55,21 @@ export default function PeriTest({classNames}) {
         <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              What's Peri
+              What's Peri ?
             </h2>
             <p className="mt-4 text-gray-500">
-              "Peri" is our Augmented Communication app. Users start with a
+              Peri is our Augmented Communication app. Users start with a
               library of 3,000 phrases. Any phrase can be selected and spoken
               within a few clicks.
             </p>
+            <br/>
+            <br/>
+            <p className="mt-2 text-xs text-gray-500">
+                  <strong>Based on:</strong>
+                  <br />
+                  Message Banking™, Voice Banking and Legacy Messages™ John M.
+                  Costello Boston Children’s Hospital © 2011, 2014, 2016, 2017
+                </p>
           </div>
           <div className="mt-16 space-y-16">
             <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
@@ -61,24 +87,20 @@ export default function PeriTest({classNames}) {
                     New phrases can be built and spoken using synthesized
                     speech.
                   </li>
+                  <br/>
                   <li>
                     Any phrase can be recorded for use in Voice and Message
                     banking applications.
                   </li>
+                  <br/>
                   <li>
                     Phrases can be automatically translated or sent by text
                   </li>
+                  <br/>
                   <li>
                     Using Cato with Peri allows fast, hands-free operation
                   </li>
                 </ul>
-                <br />
-                <p className="mt-2 text-sm text-gray-500">
-                  <strong>Based on:</strong>
-                  <br />
-                  Message Banking™, Voice Banking and Legacy Messages™ John M.
-                  Costello Boston Children’s Hospital © 2011, 2014, 2016, 2017
-                </p>
               </div>
               <div
                 className={classNames(
@@ -147,8 +169,10 @@ export default function PeriTest({classNames}) {
           </div>
         </div>
 
+        <StartLeft/>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+      <div className="mx-auto max-w-7xl px-6 pb-20 mb-10 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
         <p className="text-base font-semibold leading-6 text-blue-500">
                 <a href="https://demo.auli.tech/">
@@ -156,12 +180,13 @@ export default function PeriTest({classNames}) {
                   <span aria-hidden="true">&rarr;</span>
                 </a>
               </p>
-          <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Try Peri's Prototype</h2>
+          <h2 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Try Peri's Prototype</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
           Peri isn't done yet. Features are missing and there are known bugs, but you will get the idea.
           </p>
         </div>
       </div>
+      <StartRight/>
 
 
       </div>
