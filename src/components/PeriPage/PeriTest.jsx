@@ -35,8 +35,8 @@ export default function PeriTest({classNames}) {
             ref={titleRef}
             className={classNames(
               titleVisible
-                ? "transition ease-in-out duration-300 translate-x-0 opacity-100 "
-                : "transition ease-in-out duration-300 -translate-x-20 opacity-0 ",
+                ? "transition ease-in-out duration-200 translate-x-0 opacity-100 "
+                : "transition ease-in-out duration-200 -translate-x-20 opacity-0 ",
               "mx-auto max-w-2xl lg:mx-0"
             )}
           >

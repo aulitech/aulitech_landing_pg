@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import "./cato.css"
 
 const features = [
   {
@@ -23,51 +24,48 @@ export default function CatoTest({classNames, scrollDir}) {
   const { ref: myRef, inView: myElementVisible } = useInView(options);
 
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-0">
-      <div className="bg-gray-900 py-10 sm:py-10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* <div ref={titleRef} className={classNames(titleVisible ? "transition ease-in-out duration-500 translate-x-0 opacity-100 " : "transition ease-in-out duration-350 -translate-x-20 opacity-0 ", "mx-auto max-w-2xl lg:mx-0")}> */}
-          <div
-            ref={titleRef}
-            className={classNames(
-              titleVisible
-                ? "transition ease-in-out duration-300 translate-x-0 opacity-100 "
-                : "transition ease-in-out duration-300 -translate-x-20 opacity-0 ",
-              "mx-auto max-w-2xl lg:mx-0"
-            )}
-          >
-            <h2 className="text-white text-4xl font-bold tracking-tight sm:text-6xl">
-              Cato
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-white">
-              When you can't click a mouse, tap a screen, or change the channel
-              you've lost control of your environment.
-            </p>
-          </div>
+    <div>
+      <div className="intro-header">
+      <div className="text-container">
+        {/* <div ref={titleRef} className={classNames(titleVisible ? "transition ease-in-out duration-500 translate-x-0 opacity-100 " : "transition ease-in-out duration-350 -translate-x-20 opacity-0 ", "mx-auto max-w-2xl lg:mx-0")}> */}
+        <div
+          ref={titleRef}
+          className={classNames(
+            titleVisible
+              ? "transition ease-in-out duration-200 translate-x-0 opacity-100 "
+              : "transition ease-in-out duration-200 -translate-x-20 opacity-0 ",
+            "scroll-container"
+          )}
+        >
+          <h2 className="title">Cato</h2>
+          <p className="blurb">
+            When you can't click a mouse, tap a screen, or change the channel
+            you've lost control of your environment.
+          </p>
         </div>
       </div>
-      <div></div>
-      <div className="bg-transparent">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    </div>
+      <div className="section-container">
+        <div className="about-container">
           <div>
             <h2
               ref={myRef}
-              className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              className="about-header"
             >
               What's Cato ?
             </h2>
-            <p className="mt-4 text-gray-500">
+            <p className="about-header-text">
               Cato is a compact wireless device intended to give individuals
               with minimal movement a way to use devices when conventional
               methods, such as a computer mouse, aren't possible.
             </p>
-            <div className="gap-x-6 py-10 sm:before:flex-1">
-              <p className="text-base font-semibold leading-6 text-blue-500">
-                <a href="#">
+            <div className="link-container">
+                <a 
+                className="link-cato"
+                href="#">
                   Check out MyCato dashboard&nbsp;
                   <span aria-hidden="true">&rarr;</span>
                 </a>
-              </p>
             </div>
 
             <dl className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-1 sm:gap-y-16 lg:gap-x-8">
@@ -119,7 +117,7 @@ export default function CatoTest({classNames, scrollDir}) {
               }}
             />
           </div> */}
-          <div
+          {/* <div
             className="absolute inset-x-0 top-15 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
             aria-hidden="true"
           >
@@ -130,7 +128,7 @@ export default function CatoTest({classNames, scrollDir}) {
                   "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
               }}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

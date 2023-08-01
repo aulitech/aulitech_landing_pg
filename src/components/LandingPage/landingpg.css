@@ -1,14 +1,17 @@
-.container {
-  background-color: transparent;
-}
-
-.contentContainer {
+.content-container {
   position: relative;
   isolation: isolate;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 14px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3.5rem;
 
+}
+
+@media (min-width: 1024px) {
+  .content-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .header {
@@ -23,5 +26,5 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px;
+  padding: 1.5rem;
 }

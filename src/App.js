@@ -18,7 +18,7 @@ function App() {
   const scrollDir = useScrollDirection(appRef)
 
   return (
-    <div ref={appRef}>
+    <div ref={appRef} className='App'>
     <Landing classNames={classNames}/>
     <CatoTest classNames={classNames} scrollDir={scrollDir}/>
     <PeriTest classNames={classNames} scrollDir={scrollDir}/>
